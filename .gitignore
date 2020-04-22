@@ -475,3 +475,4 @@ dist
 .yarn/unplugged
 .yarn/build-state.yml
 .pnp.*
+InternetBookDatabase/InternetBookDatabase/appsettings.json
