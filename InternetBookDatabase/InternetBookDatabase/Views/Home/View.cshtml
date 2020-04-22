@@ -1,0 +1,28 @@
+﻿@using System.IO
+@{
+    string folder = $"{Environment.CurrentDirectory}\\wwwroot";
+    DirectoryInfo d = new DirectoryInfo(folder);
+    FileInfo[] Files = d.GetFiles("*.css");
+    FileInfo StylesInfo = Files.FirstOrDefault(file => file.Name.ToLower().Contains("main"));
+    string Styles = StylesInfo != null ? StylesInfo.Name : "";
+    Files = d.GetFiles("*.js");
+    FileInfo MainInfo = Files.FirstOrDefault(file => file.Name.ToLower().Contains("main"));
+    string Main = MainInfo != null ? MainInfo.Name : "";
+    FileInfo BundleInfo = Files.FirstOrDefault(file => file.Name.ToLower().Contains("bundle"));
+    string Bundle = BundleInfo != null ? BundleInfo.Name : "";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBDB</title>
+    <link href="@Styles" rel="stylesheet">
+</head>
+<body>
+<div id="root"></div>
+<script type="text/javascript" src="@Bundle"></script>
+<script type="text/javascript" src="@Main"></script>
+</body>
+</html>
