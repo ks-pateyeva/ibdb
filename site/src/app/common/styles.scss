@@ -1,0 +1,201 @@
+body, #root {
+    height: 100vh;
+}
+
+main {
+    overflow: auto;
+    height: 100vh;
+}
+
+@mixin main-font {
+    font-family: 'Segoe UI' !important;
+}
+
+@mixin secondary-font {
+    font-family: 'Source Sans Pro' !important;
+}
+
+@mixin glow-effect ($color: #5BD8FF) {
+    -moz-box-shadow:0 0 10px $color;
+    -webkit-box-shadow: 0 0 10px $color;
+    box-shadow: 0 0 10px $color;
+}
+
+@mixin glow-effect-top ($color: #5BD8FF) {
+    box-shadow: 0px -1px 6px 0px #5BD8FF;
+}
+
+@mixin vertical-line ($dashed: false, $color: black, $width: 1px) {
+    border-left-color: $color;
+    border-left-width: $width;
+    @if ($dashed) {
+        border-left-style: dashed;
+    } @else {
+        border-left-style: solid;
+    }
+}
+
+@mixin vertical-line-right ($dashed: false, $color: black, $width: 1px) {
+    border-right-color: $color;
+    border-right-width: $width;
+    @if ($dashed) {
+        border-right-style: dashed;
+    } @else {
+        border-right-style: solid;
+    }
+}
+
+@mixin horizontal-line ($dashed: false, $color: black, $width: 1px) {
+    border-bottom-color: $color;
+    border-bottom-width: $width;
+    @if ($dashed) {
+        border-bottom-style: dashed;
+    } @else {
+        border-bottom-style: solid;
+    }
+}
+
+@mixin error-text {
+    border-bottom-color:rgb(214, 0, 64);
+    color: rgb(214, 0, 64);
+    -webkit-text-fill-color: rgb(214, 0, 64);
+}
+
+@mixin caption ($font-color: #707070, $line-color: #707070) {
+    font-size: 20px;
+    @include main-font;
+    font-weight: 200;
+    color: $font-color;
+    @include horizontal-line($color: $line-color, $width: 2px);
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+@mixin caption-group ($font-color: #707070, $line-color: #707070) {
+    font-size: 16px;
+    @include secondary-font;
+    font-weight: 200;
+    color: $font-color;
+    @include horizontal-line($dashed: true, $color: $line-color, $width: 1px);
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+@mixin list-vertical-scroll ($color: rgb(255, 255, 255)) {
+    scrollbar-color: $color rgba(255, 255, 255, 0);
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0);
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $color; 
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: $color; 
+    }
+}
+
+@mixin list-horizontal-scroll ($color: rgb(255, 255, 255)) {
+    scrollbar-color: $color rgba(255, 255, 255, 0);
+    &::-webkit-scrollbar {
+        height: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0);
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $color; 
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: $color; 
+    }
+}
+
+@mixin label-badge ($color: rgba(255, 255, 255, 0), $outline-color: rgba(255, 255, 255, 0), $rounded: false) {
+    background-color: $color;
+    border: 1px solid $outline-color;
+    @if $rounded {
+        border-radius: 5px;
+    }
+}
+
+.offset-detector {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+
+.avatar {
+    flex-shrink: 0;
+}
+
+.avatar-rounded {
+    border-radius: 35%;
+    flex-shrink: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.h-100 {
+    height: 100%;
+}
+
+.glow {
+    -moz-box-shadow:0 0 7px rgb(20, 200, 255);
+    -webkit-box-shadow:0 0 7px rgb(20, 200, 255);
+    box-shadow:0 0 7px rgb(20, 200, 255);
+}
+
+.bg-tr-80 {
+    background-color: rgba(255, 255, 255, 0.80);
+}
+
+.bg-tr-50 {
+    background-color: rgba(77, 79, 92, 0.50);
+}
+
+.bg-lightgray {
+    background-color: #ECEDF1;
+}
+
+.border-bottom {
+    border: none;
+    border-bottom: 1px solid #DFDFDF;
+}
+
+.toogle-button {
+    min-width: 1.5em; 
+    max-width: 1.5em;
+    min-height: 2em;
+    max-height: 2em; 
+}
+
+.treelist-row-padding {
+    padding-left: 3em
+}
+
+.cursor-pointer {
+    cursor: pointer
+}
+
+.rounded-border-label {
+    border: none;
+    border-bottom: 1px solid #DFDFDF;
+}
+

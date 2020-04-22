@@ -1,0 +1,156 @@
+@import '../../common/styles.scss';
+
+$main-color: #5BD8FF;
+$input-color: white;
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    background-color: darkolivegreen;
+    overflow: auto;
+}
+
+.login-page__login-group {
+    @media screen and (max-height: 499px) {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    @media screen and (min-height: 500px) {
+        margin-top: calc(9vh);
+    }
+    @media screen and (max-width: 280px) {
+        min-width: 280px;
+        min-height: 280px;
+    }
+    @media screen and (min-width: 281px) and (max-width: 550px) {
+        min-width: 90vw;
+    }
+    @media screen and (min-width: 550px) {
+        min-width: 500px;
+    }
+}
+
+.login-page__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-page__input-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.login-page__logo {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 271px;
+    max-width: 271px;
+    // min-height: 178px;
+    // max-height: 178px;
+    @media screen and (max-height: 499px) {
+        display: none;
+    }
+    @media screen and (min-height: 500px) {
+        display: flex;
+    }
+}
+
+@mixin login-page__input--common {
+    outline: none;
+    color: $main-color;
+    transition: background-color 5000s ease-in-out 0s;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 2px;
+    background-color: transparent !important;
+    font-size: 24px;
+}
+
+
+.login-page__input {
+    @include login-page__input--common;
+    border-bottom-color: #7C7B98;
+    color: $main-color;
+    -webkit-text-fill-color: $main-color;
+    font-size: 24px !important;
+}
+
+.login-page__input:-webkit-autofill,
+.login-page__input:-webkit-autofill:hover, 
+.login-page__input:-webkit-autofill:focus
+.login-page__input:-webkit-autofill
+{  
+    @include login-page__input--common;
+    border-bottom-color: #7C7B98;
+    color: $main-color;
+    -webkit-text-fill-color: $main-color;
+}
+
+.login-page__input--not-valid {
+    @include login-page__input--common;
+    @include error-text;
+}
+
+.login-page__input--not-valid:-webkit-autofill,
+.login-page__input--not-valid:-webkit-autofill:hover, 
+.login-page__input--not-valid:-webkit-autofill:focus
+.login-page__input--not-valid:-webkit-autofill
+{  
+    @include login-page__input--common;
+    @include error-text;
+}
+
+.login-page__input--after-input {
+    @include login-page__input--common;
+    border-bottom-color: #7C7B98;
+    color: $input-color;
+    -webkit-text-fill-color:$input-color;
+}
+
+.login-page__input--after-input:-webkit-autofill,
+.login-page__input--after-input:-webkit-autofill:hover, 
+.login-page__input--after-input:-webkit-autofill:focus
+.login-page__input--after-input:-webkit-autofill
+ {  
+    @include login-page__input--common;
+    border-bottom-color: #7C7B98;
+    color: $input-color;
+    -webkit-text-fill-color: $input-color;
+}
+
+.login-page__label {
+    font-size: 20px;
+    & {
+        @extend .login-page__label;
+        color: transparent;
+    }
+    &--not-valid {
+        @extend .login-page__label;
+        color: transparent;
+    }
+    &--after-input {
+        @extend .login-page__label;
+        color: $main-color;
+    }
+}
+
+.login-page__submit-button {
+    font-size: 23px !important;
+    margin-top: 28px;
+}
+
+.login-page__error {
+    font-size: 24px;
+    @include error-text;
+    text-align: center;
+}
+
+.login-page__hidden-input {
+    position: absolute; 
+    left: -9999px; 
+    width: 1px; 
+    height: 1px;
+}
