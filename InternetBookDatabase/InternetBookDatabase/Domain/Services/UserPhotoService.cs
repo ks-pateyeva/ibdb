@@ -49,7 +49,7 @@ namespace InternetBookDatabase.Domain.Services
                     Directory.CreateDirectory(folder);
                 }
 
-                List<DBAL.Models.UserPhoto> photos = _repository.GetPhotos().ToList();
+                List<DBAL.Models.UserPhoto> photos = _repository.GetPhotos();
                 foreach (DBAL.Models.UserPhoto photo in photos)
                 {
                     SaveUserPhoto(photo);

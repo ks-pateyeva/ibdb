@@ -6,6 +6,7 @@ namespace InternetBookDatabase.DBAL
 {
     public interface IDBRepository
     {
-        Task<List<UserPhoto>> GetPhotos();
+        List<UserPhoto> GetPhotos();
+        Task<User> GetUserByName(string username);
     }
 }
