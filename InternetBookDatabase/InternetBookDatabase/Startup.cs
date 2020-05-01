@@ -13,6 +13,7 @@ namespace InternetBookDatabase
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(Startup));
             services.AddSingleton<IDBRepository, DBRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -20,6 +21,7 @@ namespace InternetBookDatabase
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IMapper mapper)
         {
+            mapper.ConfigurationProvider.AssertConfigurationIsValid();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
