@@ -3,6 +3,7 @@
 import React from 'react';
 import Authorization from './authorization/authorizationContainer.jsx';
 import Routes from './routes/routesContainer.jsx';
+import AppState from './appState/appStateContainer.jsx';
 import 'isomorphic-fetch';
 import 'abortcontroller-polyfill/dist/abortcontroller-polyfill-only';
 //import '../common/fonts.scss';
@@ -17,6 +18,7 @@ export default class App extends React.Component {
 	render() {
 		return (
 			<main className="clearfix main">
+				<AppState />
 				<Authorization>
 					<Routes />
 				</Authorization>

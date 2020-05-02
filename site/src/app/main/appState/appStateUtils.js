@@ -1,0 +1,54 @@
+export const colorsArr = [
+    {
+        code: "XXX",
+        value: null,
+    }, {
+        code: "BLK",
+        value: "#000000",
+    }, {
+        code: "BLU",
+        value: "#0000FF",
+    }, {
+        code: "BRO",
+        value: "#A52A2A",
+    }, {
+        code: "GRY",
+        value: "#808080",
+    }, {
+        code: "GRN",
+        value: "#008000",
+    }, {
+        code: "HAZ",
+        value: "#776536",
+    },  {
+        code: "MAR",
+        value: "#800000",
+    },  {
+        code: "PNK",
+        value: "#FFC0CB",
+    },  {
+        code: "MUL",
+        value: null,
+    },  {
+        code: "BLD",
+        value: null,
+    },  {
+        code: "BLN",
+        value: "#faf0be",
+    },  {
+        code: "RED",
+        value: "#FF0000",
+    },  {
+        code: "WHI",
+        value: "#FFFFFF",
+    },  {
+        code: "SDY",
+        value: "#c2b280",
+    },  {
+        code: "ONG",
+        value: "#ffa500",
+    },  {
+        code: "PLE",
+        value: "#6a0dad",
+    },
+];
